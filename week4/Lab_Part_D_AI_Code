@@ -1,0 +1,25 @@
+# Simple appointment storage using a dictionary
+# No database or GUI is used.
+
+appointments = []
+
+def book_appointment(patient_name, practitioner_name, appointment_time):
+    appointment = {
+        "patient": patient_name,
+        "practitioner": practitioner_name,
+        "time": appointment_time
+    }
+
+    appointments.append(appointment)
+    return appointment
+
+# Example usage
+book_appointment("Alice Smith", "Dr. John Doe", "10:00 AM")
+
+# Display stored appointments
+for appointment in appointments:
+    print(
+        f"Patient: {appointment['patient']}, "
+        f"Practitioner: {appointment['practitioner']}, "
+        f"Time: {appointment['time']}"
+    )
