@@ -1,0 +1,58 @@
+class Patient:
+    def __init__(self, patient_id, name, contact_details, date_of_birth):
+        self.patient_id = patient_id
+        self.name = name
+        self.contact_details = contact_details
+        self.date_of_birth = date_of_birth
+
+    def update_details(self):
+        # FR-03: update patient record
+        pass
+
+    def view_history(self):
+        # FR-11: view patient's appointment history
+        pass
+
+    @staticmethod
+    def search(patient_id, name, date_of_birth):
+        # FR-02: search patient by name, DOB, and ID
+        pass
+
+
+class Practitioner:
+    def __init__(self, practitioner_id, name, specialty, weekly_availability):
+        self.practitioner_id = practitioner_id
+        self.name = name
+        self.specialty = specialty
+        self.weekly_availability = weekly_availability
+
+    def register(self):
+        # FR-04: register practitioner
+        pass
+
+    def view_schedule(self):
+        # FR-10: view own appointment schedule
+        pass
+
+
+class Appointment:
+    def __init__(self, appointment_id, date, time):
+        self.appointment_id = appointment_id
+        self.date = date
+        self.time = time
+        self.status = "Booked"
+        self.cancellation_reason = None
+        self.patient = None
+        self.practitioner = None
+
+    def book(self, patient, practitioner, date, time):
+        # FR-05: book appointment
+        pass
+
+    def cancel(self, reason):
+        # FR-07: cancel appointment and record reason
+        pass
+
+    def is_duplicate(self, practitioner, date, time):
+        # FR-06 / NFR-06: check for duplicate booking
+        pass
